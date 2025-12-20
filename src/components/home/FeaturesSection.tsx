@@ -28,9 +28,9 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="border-y border-border bg-muted/30 py-10 lg:py-14">
+    <section className="border-y border-border bg-muted/30 py-6 lg:py-8">
       <div className="container-custom">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -38,14 +38,14 @@ export function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group flex items-center gap-4 rounded-2xl bg-card/50 p-5 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-lg"
+              className="group flex items-center gap-3 rounded-xl bg-card/50 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-card hover:shadow-lg"
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
-                <feature.icon className="h-6 w-6 text-primary" />
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+                <feature.icon className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="text-sm font-semibold">{feature.title}</h3>
+                <p className="text-xs text-muted-foreground">{feature.description}</p>
               </div>
             </motion.div>
           ))}
@@ -57,19 +57,19 @@ export function FeaturesSection() {
 
 export function CTASection() {
   return (
-    <section className="section-padding">
+    <section className="py-12 lg:py-16">
       <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-2rem bg-linear-to-br from-primary via-primary to-primary px-8 py-16 text-center opacity-90 lg:px-16 lg:py-24"
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/90 px-6 py-12 text-center lg:px-12 lg:py-16"
         >
-          {/* Background decorations */}
+          {/* Background decorations - Simplified */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
             <div 
               className="absolute inset-0 opacity-10"
               style={{
@@ -85,23 +85,23 @@ export function CTASection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-primary-foreground backdrop-blur-sm mb-6"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1.5 text-xs font-medium text-primary-foreground backdrop-blur-sm"
             >
               ✨ Exclusive Members Only
             </motion.div>
             
-            <h2 className="font-display text-5xl tracking-tight text-primary-foreground lg:text-6xl">
+            <h2 className="font-display text-3xl tracking-tight text-primary-foreground lg:text-4xl">
               JOIN THE DRIP SQUAD
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-primary-foreground/85 leading-relaxed">
+            <p className="mx-auto mt-3 max-w-lg text-sm text-primary-foreground/85 leading-relaxed lg:text-base">
               Get exclusive access to new releases, member-only discounts, and early drops. 
               Be the first to cop the freshest kicks.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" variant="secondary" className="h-14 px-10 text-base font-semibold rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Button asChild size="default" variant="secondary" className="h-11 px-8 text-sm font-semibold rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                 <Link to="/auth">
                   Sign Up Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
